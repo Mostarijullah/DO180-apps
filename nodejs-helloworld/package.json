@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Hello World!",
   "main": "app.js",
-  "author": "Red Hat Training",
+  "author": "Red Hat Training by Md Mostarijullah Siddiquee",
   "license": "ASL",
   "dependencies": {
-    "express": "4.14.2"
+    "express": "4.14.x"
   }
 }
