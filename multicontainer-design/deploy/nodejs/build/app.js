@@ -1,4 +1,4 @@
-var restify = require('restify');
+const restify = require('restify');
 
 var controller = require('./controllers/items');
 
@@ -9,14 +9,17 @@ model.connect(db.params, function(err) {
     if (err) throw err;
 });
 
-var server = restify.createServer() 
-    .use(restify.fullResponse())
-    .use(restify.queryParser())
-    .use(restify.bodyParser());
+
+server = restify.createServer();
+server.use(restify.plugins.fullResponse());
+server.use(restify.plugins.queryParser());
+server.use(restify.plugins.bodyParser());
+
+    
     
 controller.context(server, '/todo/api', model); 
 
-server.get(/\/todo\/?.*/, restify.serveStatic({
+server.get('GET', '/\/todo\/?.*/', restify.plugins.serveStatic({
     'directory': __dirname,
     'default': 'index.html'
 }));

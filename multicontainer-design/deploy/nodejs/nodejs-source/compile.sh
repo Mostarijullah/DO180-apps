@@ -2,5 +2,4 @@
 
 source /opt/rh/nodejs010/enable
 
-npm install
-
+npm install 
