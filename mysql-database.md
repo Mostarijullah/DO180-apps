@@ -1,43 +1,53 @@
 [student@workstation DO180-apps]$ vi /etc/containers/registries.conf
+
 [student@workstation DO180-apps]$ vi /etc/yum/
 pluginconf.d/ protected.d/  vars/         
+
 [student@workstation DO180-apps]$ vi /etc/yum
 yum/         yum.conf     yum.repos.d/ 
+
 [student@workstation DO180-apps]$ vi /etc/yum
 yum/         yum.conf     yum.repos.d/ 
-[student@workstation DO180-apps]$ vi /etc/yum.repos.d/
+
+
 [student@workstation DO180-apps]$ vi /etc/yum.repos.d/
 epel-modular.repo          epel-testing-modular.repo  redhat.repo                
 epel.repo                  epel-testing.repo          rhel_dvd.repo              
+
 [student@workstation DO180-apps]$ vi /etc/yum.repos.d/
 epel-modular.repo          epel-testing-modular.repo  redhat.repo                
 epel.repo                  epel-testing.repo          rhel_dvd.repo              
+
 [student@workstation DO180-apps]$ vi /etc/yum.repos.d/rhel_dvd.repo 
+
 [student@workstation DO180-apps]$ podman login registry.redhat.io -u mossiddi
 Password: 
 Login Succeeded!
+
 [student@workstation DO180-apps]$ podman images
 REPOSITORY  TAG         IMAGE ID    CREATED     SIZE
+
 [student@workstation DO180-apps]$ ps
     PID TTY          TIME CMD
    8858 pts/1    00:00:00 bash
    9153 pts/1    00:00:00 git
    9461 pts/1    00:00:00 ps
 
-
 [student@workstation DO180-apps]$ podman ps -a
 CONTAINER ID  IMAGE       COMMAND     CREATED     STATUS      PORTS       NAMES
-[student@workstation DO180-apps]$  lab container-create start
+
+[student@workstation DO180-apps]$ lab container-create start
 
 Setting up workstation for the Guided Exercise: Creating a MySQL database instance
 
  · Checking podman configuration...............................  SUCCESS
  · Creating create_table.txt file..............................  SUCCESS
-[student@workstation DO180-apps]$ $ podman run --name mysql-basic \
+
+[student@workstation DO180-apps]$ podman run --name mysql-basic \
 >  -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55 \
 >  -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55 \
 >  -d registry.redhat.io/rhel8/mysql-80:1
-bash: $: command not found...
+
 [student@workstation DO180-apps]$ podman run --name mysql-basic  -e MYSQL_USER=user1 -e MYSQL_PASSWORD=mypa55  -e MYSQL_DATABASE=items -e MYSQL_ROOT_PASSWORD=r00tpa55  -d registry.redhat.io/rhel8/mysql-80:1
 Trying to pull registry.redhat.io/rhel8/mysql-80:1...
 Getting image source signatures
@@ -50,11 +60,12 @@ Copying config b1403464ce done
 Writing manifest to image destination
 Storing signatures
 fff2022a22b737b439c58e67d98409149040043436df4746f0add9fc24c2015f
+
 [student@workstation DO180-apps]$ podman ps --format "{{.ID}} {{.Image}} {{.Names}}"
 fff2022a22b7 registry.redhat.io/rhel8/mysql-80:1 mysql-basic
 
-
 [student@workstation DO180-apps]$ podman exec -it mysql-basic /bin/bash
+
 bash-4.4$  mysql -uroot
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 8
@@ -82,20 +93,16 @@ mysql> SHOW DATABASES;
 
 mysql>  USE items;
 Database changed
-mysql> CREATE TABLE Projects (id int NOT NULL,
-    -> -> name varchar(255) DEFAULT NULL,
-    -> -> code varchar(255) DEFAULT NULL,
-    -> -> PRIMARY KEY (id));^C
 
-^C
+
 mysql> CREATE TABLE Projects (id int NOT NULL,
     ->  name varchar(255) DEFAULT NULL,
     ->  code varchar(255) DEFAULT NULL,
     ->  PRIMARY KEY (id));
 Query OK, 0 rows affected (0.14 sec)
 
-mysql> > SHOW TABLE>S ;SHOW TABLES;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '> SHOW TABLE>S' at line 1
+mysql> SHOW TABLES;
+
 +-----------------+
 | Tables_in_items |
 +-----------------+
@@ -116,8 +123,10 @@ mysql>  SELECT * FROM Projects;
 
 mysql> exit
 Bye
+
 bash-4.4$ exit
 exit
+
 [student@workstation DO180-apps]$  lab container-create finish
 
 Completing the Guided Exercise: Creating a MySQL database instance
