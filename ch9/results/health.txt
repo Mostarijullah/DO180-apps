@@ -1,0 +1,494 @@
+NAME       STATUS   ROLES           AGE   VERSION
+master01   Ready    master,worker   82d   v1.23.3+e419edf
+master02   Ready    master,worker   82d   v1.23.3+e419edf
+master03   Ready    master,worker   82d   v1.23.3+e419edf
+Name:               master01
+Roles:              master,worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=master01
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-dac1e919b294c370b32172cffe4ba8e9
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-dac1e919b294c370b32172cffe4ba8e9
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Thu, 28 Jul 2022 12:11:26 -0400
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  master01
+  AcquireTime:     <unset>
+  RenewTime:       Tue, 18 Oct 2022 23:25:47 -0400
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Tue, 18 Oct 2022 23:23:23 -0400   Thu, 28 Jul 2022 12:45:30 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Tue, 18 Oct 2022 23:23:23 -0400   Thu, 28 Jul 2022 12:45:30 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Tue, 18 Oct 2022 23:23:23 -0400   Thu, 28 Jul 2022 12:45:30 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Tue, 18 Oct 2022 23:23:23 -0400   Thu, 28 Jul 2022 12:45:41 -0400   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.50.10
+  Hostname:    master01
+Capacity:
+  cpu:                4
+  ephemeral-storage:  41407468Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16409340Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  38161122446
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             15258364Ki
+  pods:               250
+System Info:
+  Machine ID:                             5a24320e1fb84806a18b8cbc6b6ffc87
+  System UUID:                            c4fb8d4e-a383-41ce-b33c-6ce79f1ec8de
+  Boot ID:                                7f75372f-5afb-4ec6-bea2-d57cad278952
+  Kernel Version:                         4.18.0-305.34.2.el8_4.x86_64
+  OS Image:                               Red Hat Enterprise Linux CoreOS 410.84.202202251620-0 (Ootpa)
+  Operating System:                       linux
+  Architecture:                           amd64
+  Container Runtime Version:              cri-o://1.23.1-9.rhaos4.10.gitbdffb9a.el8
+  Kubelet Version:                        v1.23.3+e419edf
+  Kube-Proxy Version:                     v1.23.3+e419edf
+Non-terminated Pods:                      (32 in total)
+  Namespace                               Name                                       CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                               ----                                       ------------  ----------  ---------------  -------------  ---
+  common                                  nexus-1-b8w47                              0 (0%)        0 (0%)      512Mi (3%)       2Gi (13%)      82d
+  developer-application                   todoapi                                    500m (14%)    500m (14%)  0 (0%)           0 (0%)         17h
+  developer-s2i                           php-helloworld-6cfbd4d99b-gxsq4            0 (0%)        0 (0%)      0 (0%)           0 (0%)         16h
+  openshift-apiserver                     apiserver-678b596447-t64mg                 110m (3%)     0 (0%)      250Mi (1%)       0 (0%)         82d
+  openshift-authentication                oauth-openshift-656cbddb57-dzcwp           10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-cluster-node-tuning-operator  tuned-xxj7j                                10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-controller-manager            controller-manager-2bkqp                   100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         18h
+  openshift-dns                           dns-default-7h288                          60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         82d
+  openshift-dns                           node-resolver-9756h                        5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         82d
+  openshift-etcd                          etcd-master01                              400m (11%)    0 (0%)      930Mi (6%)       0 (0%)         82d
+  openshift-etcd                          etcd-quorum-guard-7d8dc4bd99-pql5k         10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-image-registry                node-ca-94wbj                              10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         82d
+  openshift-ingress-canary                ingress-canary-wt7bx                       10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         82d
+  openshift-kube-apiserver                kube-apiserver-guard-master01              10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-apiserver                kube-apiserver-master01                    290m (8%)     0 (0%)      1224Mi (8%)      0 (0%)         18h
+  openshift-kube-controller-manager       kube-controller-manager-guard-master01     10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-controller-manager       kube-controller-manager-master01           80m (2%)      0 (0%)      500Mi (3%)       0 (0%)         82d
+  openshift-kube-scheduler                openshift-kube-scheduler-guard-master01    10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-scheduler                openshift-kube-scheduler-master01          25m (0%)      0 (0%)      150Mi (1%)       0 (0%)         82d
+  openshift-machine-config-operator       machine-config-daemon-r4tg7                40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         82d
+  openshift-machine-config-operator       machine-config-server-gvm88                20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-marketplace                   do285-catalog-jn2jm                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-monitoring                    node-exporter-jg7xm                        9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         82d
+  openshift-monitoring                    prometheus-adapter-7cbccf7496-cd75g        1m (0%)       0 (0%)      40Mi (0%)        0 (0%)         18h
+  openshift-multus                        multus-additional-cni-plugins-hgmg8        10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         82d
+  openshift-multus                        multus-admission-controller-dkfhb          20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-multus                        multus-fcsvm                               10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         82d
+  openshift-multus                        network-metrics-daemon-pk985               20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         82d
+  openshift-network-diagnostics           network-check-target-kvczc                 10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         82d
+  openshift-oauth-apiserver               apiserver-d4dddf5fc-tjz9h                  150m (4%)     0 (0%)      200Mi (1%)       0 (0%)         82d
+  openshift-sdn                           sdn-controller-cvdj2                       20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-sdn                           sdn-z8csz                                  110m (3%)     0 (0%)      220Mi (1%)       0 (0%)         82d
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                2080m (59%)   500m (14%)
+  memory             5004Mi (33%)  2Gi (13%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason                   Age                From     Message
+  ----     ------                   ----               ----     -------
+  Normal   Starting                 82d                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x2 over 82d)  kubelet  Node master01 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x2 over 82d)  kubelet  Node master01 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x2 over 82d)  kubelet  Node master01 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  82d                kubelet  Updated Node Allocatable limit across pods
+  Normal   NodeReady                82d                kubelet  Node master01 status is now: NodeReady
+  Normal   NodeNotSchedulable       82d                kubelet  Node master01 status is now: NodeNotSchedulable
+  Normal   Starting                 82d                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x2 over 82d)  kubelet  Node master01 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x2 over 82d)  kubelet  Node master01 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x2 over 82d)  kubelet  Node master01 status is now: NodeHasSufficientPID
+  Warning  Rebooted                 82d                kubelet  Node master01 has been rebooted, boot id: b20dcdba-b64a-4f8b-9d4d-acf2ee0849cc
+  Normal   NodeNotReady             82d                kubelet  Node master01 status is now: NodeNotReady
+  Normal   NodeAllocatableEnforced  82d                kubelet  Updated Node Allocatable limit across pods
+  Normal   NodeNotSchedulable       82d                kubelet  Node master01 status is now: NodeNotSchedulable
+  Normal   NodeReady                82d                kubelet  Node master01 status is now: NodeReady
+  Normal   NodeSchedulable          82d                kubelet  Node master01 status is now: NodeSchedulable
+  Normal   Starting                 82d                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x8 over 82d)  kubelet  Node master01 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x8 over 82d)  kubelet  Node master01 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x7 over 82d)  kubelet  Node master01 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  82d                kubelet  Updated Node Allocatable limit across pods
+  Normal   Starting                 79m                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  79m (x8 over 79m)  kubelet  Node master01 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    79m (x8 over 79m)  kubelet  Node master01 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     79m (x7 over 79m)  kubelet  Node master01 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  79m                kubelet  Updated Node Allocatable limit across pods
+
+
+Name:               master02
+Roles:              master,worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=master02
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-dac1e919b294c370b32172cffe4ba8e9
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-dac1e919b294c370b32172cffe4ba8e9
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Thu, 28 Jul 2022 12:11:25 -0400
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  master02
+  AcquireTime:     <unset>
+  RenewTime:       Tue, 18 Oct 2022 23:25:46 -0400
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Tue, 18 Oct 2022 23:25:35 -0400   Thu, 28 Jul 2022 12:40:59 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Tue, 18 Oct 2022 23:25:35 -0400   Thu, 28 Jul 2022 12:40:59 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Tue, 18 Oct 2022 23:25:35 -0400   Thu, 28 Jul 2022 12:40:59 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Tue, 18 Oct 2022 23:25:35 -0400   Thu, 28 Jul 2022 12:41:09 -0400   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.50.11
+  Hostname:    master02
+Capacity:
+  cpu:                4
+  ephemeral-storage:  41407468Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16409332Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  38161122446
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             15258356Ki
+  pods:               250
+System Info:
+  Machine ID:                              89832ba9819e4623984ae395e9533201
+  System UUID:                             715f7b65-9683-4e0c-822c-8a9ec263b855
+  Boot ID:                                 2329feed-b367-4ddd-be14-ade27a1b8a8a
+  Kernel Version:                          4.18.0-305.34.2.el8_4.x86_64
+  OS Image:                                Red Hat Enterprise Linux CoreOS 410.84.202202251620-0 (Ootpa)
+  Operating System:                        linux
+  Architecture:                            amd64
+  Container Runtime Version:               cri-o://1.23.1-9.rhaos4.10.gitbdffb9a.el8
+  Kubelet Version:                         v1.23.3+e419edf
+  Kube-Proxy Version:                      v1.23.3+e419edf
+Non-terminated Pods:                       (49 in total)
+  Namespace                                Name                                         CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                ----                                         ------------  ----------  ---------------  -------------  ---
+  developer-application                    mysql                                        0 (0%)        0 (0%)      0 (0%)           0 (0%)         17h
+  developer-ocp                            temp-covert-79d8d98dc9-ngkp2                 0 (0%)        0 (0%)      0 (0%)           0 (0%)         15h
+  nfs-client-provisioner                   nfs-client-provisioner-7c88ffb4f5-287sv      0 (0%)        0 (0%)      0 (0%)           0 (0%)         82d
+  openshift-apiserver                      apiserver-678b596447-tlfvn                   110m (3%)     0 (0%)      250Mi (1%)       0 (0%)         82d
+  openshift-authentication                 oauth-openshift-656cbddb57-nqhj4             10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-cluster-node-tuning-operator   tuned-n8rdj                                  10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-cluster-samples-operator       cluster-samples-operator-6c48fc4df-6v97g     20m (0%)      0 (0%)      100Mi (0%)       0 (0%)         82d
+  openshift-cluster-storage-operator       csi-snapshot-controller-868bc48b4c-vw772     10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-cluster-storage-operator       csi-snapshot-webhook-84f4c4d7bc-hn9wz        10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         82d
+  openshift-console-operator               console-operator-6999ddc45d-zvm75            10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         82d
+  openshift-console                        console-97c4b8699-2kv2j                      10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         82d
+  openshift-console                        downloads-777fbb54b5-2jrd8                   10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-controller-manager             controller-manager-b4nn2                     100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         18h
+  openshift-dns                            dns-default-xfmlw                            60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         82d
+  openshift-dns                            node-resolver-vhzwx                          5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         82d
+  openshift-etcd                           etcd-master02                                400m (11%)    0 (0%)      930Mi (6%)       0 (0%)         82d
+  openshift-etcd                           etcd-quorum-guard-7d8dc4bd99-rwx75           10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-image-registry                 image-registry-589dbd88dd-wld7p              100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         82d
+  openshift-image-registry                 node-ca-xxn6f                                10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         82d
+  openshift-ingress-canary                 ingress-canary-kbgsm                         10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         82d
+  openshift-ingress                        router-default-699bc7764c-4fhtc              100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         82d
+  openshift-kube-apiserver                 kube-apiserver-guard-master02                10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-apiserver                 kube-apiserver-master02                      290m (8%)     0 (0%)      1224Mi (8%)      0 (0%)         18h
+  openshift-kube-controller-manager        kube-controller-manager-guard-master02       10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-controller-manager        kube-controller-manager-master02             80m (2%)      0 (0%)      500Mi (3%)       0 (0%)         82d
+  openshift-kube-scheduler                 openshift-kube-scheduler-guard-master02      10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-scheduler                 openshift-kube-scheduler-master02            25m (0%)      0 (0%)      150Mi (1%)       0 (0%)         82d
+  openshift-kube-storage-version-migrator  migrator-7b74cfb5dc-bxfwf                    10m (0%)      0 (0%)      200Mi (1%)       0 (0%)         82d
+  openshift-machine-config-operator        machine-config-controller-bb88fccf8-tq5b2    20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-machine-config-operator        machine-config-daemon-fwqrc                  40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         82d
+  openshift-machine-config-operator        machine-config-server-xgnbj                  20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-monitoring                     alertmanager-main-1                          9m (0%)       0 (0%)      120Mi (0%)       0 (0%)         82d
+  openshift-monitoring                     kube-state-metrics-896d55c47-tfstz           4m (0%)       0 (0%)      110Mi (0%)       0 (0%)         82d
+  openshift-monitoring                     node-exporter-7rrw9                          9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         82d
+  openshift-monitoring                     openshift-state-metrics-6cd866ccc9-mlt29     3m (0%)       0 (0%)      72Mi (0%)        0 (0%)         82d
+  openshift-monitoring                     prometheus-k8s-1                             100m (2%)     0 (0%)      1104Mi (7%)      0 (0%)         82d
+  openshift-monitoring                     prometheus-operator-5874b67fd8-wq785         6m (0%)       0 (0%)      165Mi (1%)       0 (0%)         82d
+  openshift-monitoring                     thanos-querier-6fc64444c4-vfr9b              15m (0%)      0 (0%)      92Mi (0%)        0 (0%)         82d
+  openshift-multus                         multus-additional-cni-plugins-nxpsx          10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         82d
+  openshift-multus                         multus-admission-controller-sbdj2            20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-multus                         multus-n9ssq                                 10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         82d
+  openshift-multus                         network-metrics-daemon-55b4g                 20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         82d
+  openshift-network-diagnostics            network-check-source-865d4b5578-52wdp        10m (0%)      0 (0%)      40Mi (0%)        0 (0%)         82d
+  openshift-network-diagnostics            network-check-target-z86rb                   10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         82d
+  openshift-oauth-apiserver                apiserver-d4dddf5fc-rdxd6                    150m (4%)     0 (0%)      200Mi (1%)       0 (0%)         82d
+  openshift-operator-lifecycle-manager     packageserver-6b6ddb6c7c-grj6w               10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-sdn                            sdn-controller-wj8fv                         20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-sdn                            sdn-phf8n                                    110m (3%)     0 (0%)      220Mi (1%)       0 (0%)         82d
+  openshift-service-ca                     service-ca-65cf6d45b4-vhmhg                  10m (0%)      0 (0%)      120Mi (0%)       0 (0%)         82d
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                2036m (58%)   0 (0%)
+  memory             7457Mi (50%)  0 (0%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason                   Age                From     Message
+  ----     ------                   ----               ----     -------
+  Normal   Starting                 82d                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x2 over 82d)  kubelet  Node master02 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x2 over 82d)  kubelet  Node master02 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x2 over 82d)  kubelet  Node master02 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  82d                kubelet  Updated Node Allocatable limit across pods
+  Normal   NodeReady                82d                kubelet  Node master02 status is now: NodeReady
+  Normal   NodeNotSchedulable       82d                kubelet  Node master02 status is now: NodeNotSchedulable
+  Normal   Starting                 82d                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x2 over 82d)  kubelet  Node master02 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x2 over 82d)  kubelet  Node master02 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x2 over 82d)  kubelet  Node master02 status is now: NodeHasSufficientPID
+  Warning  Rebooted                 82d                kubelet  Node master02 has been rebooted, boot id: 775451c7-69eb-4767-9daf-54bca1ce0866
+  Normal   NodeNotReady             82d                kubelet  Node master02 status is now: NodeNotReady
+  Normal   NodeAllocatableEnforced  82d                kubelet  Updated Node Allocatable limit across pods
+  Normal   NodeNotSchedulable       82d                kubelet  Node master02 status is now: NodeNotSchedulable
+  Normal   NodeReady                82d                kubelet  Node master02 status is now: NodeReady
+  Normal   NodeSchedulable          82d                kubelet  Node master02 status is now: NodeSchedulable
+  Normal   Starting                 82d                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x8 over 82d)  kubelet  Node master02 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x8 over 82d)  kubelet  Node master02 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x7 over 82d)  kubelet  Node master02 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  82d                kubelet  Updated Node Allocatable limit across pods
+  Normal   Starting                 79m                kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  79m (x8 over 79m)  kubelet  Node master02 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    79m (x8 over 79m)  kubelet  Node master02 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     79m (x7 over 79m)  kubelet  Node master02 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  79m                kubelet  Updated Node Allocatable limit across pods
+
+
+Name:               master03
+Roles:              master,worker
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=master03
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/master=
+                    node-role.kubernetes.io/worker=
+                    node.openshift.io/os_id=rhcos
+Annotations:        machineconfiguration.openshift.io/controlPlaneTopology: HighlyAvailable
+                    machineconfiguration.openshift.io/currentConfig: rendered-master-dac1e919b294c370b32172cffe4ba8e9
+                    machineconfiguration.openshift.io/desiredConfig: rendered-master-dac1e919b294c370b32172cffe4ba8e9
+                    machineconfiguration.openshift.io/reason: 
+                    machineconfiguration.openshift.io/state: Done
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Thu, 28 Jul 2022 12:11:26 -0400
+Taints:             <none>
+Unschedulable:      false
+Lease:
+  HolderIdentity:  master03
+  AcquireTime:     <unset>
+  RenewTime:       Tue, 18 Oct 2022 23:25:50 -0400
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Tue, 18 Oct 2022 23:25:29 -0400   Thu, 28 Jul 2022 12:35:18 -0400   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Tue, 18 Oct 2022 23:25:29 -0400   Thu, 28 Jul 2022 12:35:18 -0400   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Tue, 18 Oct 2022 23:25:29 -0400   Thu, 28 Jul 2022 12:35:18 -0400   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Tue, 18 Oct 2022 23:25:29 -0400   Thu, 28 Jul 2022 12:35:28 -0400   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  192.168.50.12
+  Hostname:    master03
+Capacity:
+  cpu:                4
+  ephemeral-storage:  41407468Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16409332Ki
+  pods:               250
+Allocatable:
+  cpu:                3500m
+  ephemeral-storage:  38161122446
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             15258356Ki
+  pods:               250
+System Info:
+  Machine ID:                                       99d64de0f2474f74b9a9089c31f55c32
+  System UUID:                                      c13b0ddd-a610-4146-8d77-0c811024b207
+  Boot ID:                                          44c7f96c-ebd4-4ec6-b4da-6f875b11cc87
+  Kernel Version:                                   4.18.0-305.34.2.el8_4.x86_64
+  OS Image:                                         Red Hat Enterprise Linux CoreOS 410.84.202202251620-0 (Ootpa)
+  Operating System:                                 linux
+  Architecture:                                     amd64
+  Container Runtime Version:                        cri-o://1.23.1-9.rhaos4.10.gitbdffb9a.el8
+  Kubelet Version:                                  v1.23.3+e419edf
+  Kube-Proxy Version:                               v1.23.3+e419edf
+Non-terminated Pods:                                (69 in total)
+  Namespace                                         Name                                                          CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                                         ----                                                          ------------  ----------  ---------------  -------------  ---
+  openshift-apiserver-operator                      openshift-apiserver-operator-67b556989f-htwmr                 10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-apiserver                               apiserver-678b596447-p5ps5                                    110m (3%)     0 (0%)      250Mi (1%)       0 (0%)         82d
+  openshift-authentication-operator                 authentication-operator-5c7d568d79-hwqhl                      20m (0%)      0 (0%)      200Mi (1%)       0 (0%)         82d
+  openshift-authentication                          oauth-openshift-656cbddb57-kqcsm                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-cloud-controller-manager-operator       cluster-cloud-controller-manager-operator-8596c4dcc5-xp2vc    20m (0%)      0 (0%)      75Mi (0%)        0 (0%)         82d
+  openshift-cloud-credential-operator               cloud-credential-operator-76f6d69688-gp27d                    20m (0%)      0 (0%)      170Mi (1%)       0 (0%)         82d
+  openshift-cluster-machine-approver                machine-approver-7b569bbb54-7xk7s                             20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-cluster-node-tuning-operator            cluster-node-tuning-operator-84888ddc45-xl6x9                 10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         82d
+  openshift-cluster-node-tuning-operator            tuned-xftjl                                                   10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-cluster-storage-operator                cluster-storage-operator-787877fb5b-q4zzh                     10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         82d
+  openshift-cluster-storage-operator                csi-snapshot-controller-868bc48b4c-szj24                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-cluster-storage-operator                csi-snapshot-controller-operator-57d7d44586-6hj6h             10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         82d
+  openshift-cluster-storage-operator                csi-snapshot-webhook-84f4c4d7bc-2h66f                         10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         82d
+  openshift-cluster-version                         cluster-version-operator-6d8755cdbb-rvdpp                     20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-config-operator                         openshift-config-operator-6b6d99d757-cd4db                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-console                                 console-97c4b8699-fpp7x                                       10m (0%)      0 (0%)      100Mi (0%)       0 (0%)         82d
+  openshift-console                                 downloads-777fbb54b5-d4gqm                                    10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-controller-manager-operator             openshift-controller-manager-operator-77f55d5bf5-jzctn        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-controller-manager                      controller-manager-9bn42                                      100m (2%)     0 (0%)      100Mi (0%)       0 (0%)         18h
+  openshift-dns-operator                            dns-operator-559d8f4596-q78m2                                 20m (0%)      0 (0%)      69Mi (0%)        0 (0%)         82d
+  openshift-dns                                     dns-default-7xj9k                                             60m (1%)      0 (0%)      110Mi (0%)       0 (0%)         82d
+  openshift-dns                                     node-resolver-5z7mj                                           5m (0%)       0 (0%)      21Mi (0%)        0 (0%)         82d
+  openshift-etcd-operator                           etcd-operator-77db68776-zlgm2                                 10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-etcd                                    etcd-master03                                                 400m (11%)    0 (0%)      930Mi (6%)       0 (0%)         82d
+  openshift-etcd                                    etcd-quorum-guard-7d8dc4bd99-2pvv6                            10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-image-registry                          cluster-image-registry-operator-6f7784dc86-hbhq9              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-image-registry                          node-ca-fzrm2                                                 10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         82d
+  openshift-ingress-canary                          ingress-canary-2ph4q                                          10m (0%)      0 (0%)      20Mi (0%)        0 (0%)         82d
+  openshift-ingress-operator                        ingress-operator-65c8dd77bb-xhsq6                             20m (0%)      0 (0%)      96Mi (0%)        0 (0%)         82d
+  openshift-ingress                                 router-default-699bc7764c-fxfqt                               100m (2%)     0 (0%)      256Mi (1%)       0 (0%)         82d
+  openshift-insights                                insights-operator-77b5cccd84-swxvd                            10m (0%)      0 (0%)      30Mi (0%)        0 (0%)         82d
+  openshift-kube-apiserver-operator                 kube-apiserver-operator-6dbdbdc565-tnbps                      10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-kube-apiserver                          kube-apiserver-guard-master03                                 10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-apiserver                          kube-apiserver-master03                                       290m (8%)     0 (0%)      1224Mi (8%)      0 (0%)         18h
+  openshift-kube-controller-manager-operator        kube-controller-manager-operator-844444bbb7-5g7gh             10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-kube-controller-manager                 kube-controller-manager-guard-master03                        10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-controller-manager                 kube-controller-manager-master03                              80m (2%)      0 (0%)      500Mi (3%)       0 (0%)         82d
+  openshift-kube-scheduler-operator                 openshift-kube-scheduler-operator-5cf56f79df-dpq9f            10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-kube-scheduler                          openshift-kube-scheduler-guard-master03                       10m (0%)      0 (0%)      5Mi (0%)         0 (0%)         82d
+  openshift-kube-scheduler                          openshift-kube-scheduler-master03                             25m (0%)      0 (0%)      150Mi (1%)       0 (0%)         82d
+  openshift-kube-storage-version-migrator-operator  kube-storage-version-migrator-operator-56dc5c7489-7mb4p       10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-machine-api                             cluster-autoscaler-operator-6797766988-hm7z4                  30m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-machine-api                             cluster-baremetal-operator-55b64fc569-jbmgp                   20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-machine-api                             machine-api-operator-84dddd6d85-nmdmh                         20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-machine-config-operator                 machine-config-daemon-pckfs                                   40m (1%)      0 (0%)      100Mi (0%)       0 (0%)         82d
+  openshift-machine-config-operator                 machine-config-operator-5456f74544-mhck8                      20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-machine-config-operator                 machine-config-server-5qwv4                                   20m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-marketplace                             marketplace-operator-7457f7588f-qchfx                         10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-monitoring                              alertmanager-main-0                                           9m (0%)       0 (0%)      120Mi (0%)       0 (0%)         82d
+  openshift-monitoring                              cluster-monitoring-operator-c8969f575-4mqd9                   11m (0%)      0 (0%)      95Mi (0%)        0 (0%)         82d
+  openshift-monitoring                              grafana-845d4d6d54-jt9q8                                      6m (0%)       0 (0%)      99Mi (0%)        0 (0%)         82d
+  openshift-monitoring                              node-exporter-tfj4j                                           9m (0%)       0 (0%)      47Mi (0%)        0 (0%)         82d
+  openshift-monitoring                              prometheus-adapter-7cbccf7496-btt6l                           1m (0%)       0 (0%)      40Mi (0%)        0 (0%)         18h
+  openshift-monitoring                              prometheus-k8s-0                                              100m (2%)     0 (0%)      1104Mi (7%)      0 (0%)         82d
+  openshift-monitoring                              thanos-querier-6fc64444c4-tp6dz                               15m (0%)      0 (0%)      92Mi (0%)        0 (0%)         82d
+  openshift-multus                                  multus-additional-cni-plugins-j76vr                           10m (0%)      0 (0%)      10Mi (0%)        0 (0%)         82d
+  openshift-multus                                  multus-admission-controller-hrvwz                             20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-multus                                  multus-wjdfd                                                  10m (0%)      0 (0%)      65Mi (0%)        0 (0%)         82d
+  openshift-multus                                  network-metrics-daemon-xqxkb                                  20m (0%)      0 (0%)      120Mi (0%)       0 (0%)         82d
+  openshift-network-diagnostics                     network-check-target-pn45p                                    10m (0%)      0 (0%)      15Mi (0%)        0 (0%)         82d
+  openshift-network-operator                        network-operator-d8486b6cd-k68bb                              10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-oauth-apiserver                         apiserver-d4dddf5fc-9v4tb                                     150m (4%)     0 (0%)      200Mi (1%)       0 (0%)         82d
+  openshift-operator-lifecycle-manager              catalog-operator-57f649b747-xfvjq                             10m (0%)      0 (0%)      80Mi (0%)        0 (0%)         82d
+  openshift-operator-lifecycle-manager              olm-operator-7d9f48b85-srmcl                                  10m (0%)      0 (0%)      160Mi (1%)       0 (0%)         82d
+  openshift-operator-lifecycle-manager              package-server-manager-d4bd7b45c-5mskg                        10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-operator-lifecycle-manager              packageserver-6b6ddb6c7c-pm4w4                                10m (0%)      0 (0%)      50Mi (0%)        0 (0%)         82d
+  openshift-sdn                                     sdn-controller-rqhxd                                          20m (0%)      0 (0%)      70Mi (0%)        0 (0%)         82d
+  openshift-sdn                                     sdn-nt9jx                                                     110m (3%)     0 (0%)      220Mi (1%)       0 (0%)         82d
+  openshift-service-ca-operator                     service-ca-operator-6dc477cb8d-bqc4d                          10m (0%)      0 (0%)      80Mi (0%)        0 (0%)         82d
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests      Limits
+  --------           --------      ------
+  cpu                2281m (65%)   0 (0%)
+  memory             8523Mi (57%)  0 (0%)
+  ephemeral-storage  0 (0%)        0 (0%)
+  hugepages-1Gi      0 (0%)        0 (0%)
+  hugepages-2Mi      0 (0%)        0 (0%)
+Events:
+  Type     Reason                   Age                  From     Message
+  ----     ------                   ----                 ----     -------
+  Normal   Starting                 82d                  kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x2 over 82d)    kubelet  Node master03 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x2 over 82d)    kubelet  Node master03 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x2 over 82d)    kubelet  Node master03 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  82d                  kubelet  Updated Node Allocatable limit across pods
+  Normal   NodeReady                82d                  kubelet  Node master03 status is now: NodeReady
+  Normal   NodeNotSchedulable       82d                  kubelet  Node master03 status is now: NodeNotSchedulable
+  Normal   Starting                 82d                  kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  82d (x2 over 82d)    kubelet  Node master03 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    82d (x2 over 82d)    kubelet  Node master03 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x2 over 82d)    kubelet  Node master03 status is now: NodeHasSufficientPID
+  Warning  Rebooted                 82d                  kubelet  Node master03 has been rebooted, boot id: 82a72414-f53e-4fec-a4a5-13440bd01fcf
+  Normal   NodeNotReady             82d                  kubelet  Node master03 status is now: NodeNotReady
+  Normal   NodeNotSchedulable       82d                  kubelet  Node master03 status is now: NodeNotSchedulable
+  Normal   NodeAllocatableEnforced  82d                  kubelet  Updated Node Allocatable limit across pods
+  Normal   NodeReady                82d                  kubelet  Node master03 status is now: NodeReady
+  Normal   NodeSchedulable          82d                  kubelet  Node master03 status is now: NodeSchedulable
+  Normal   Starting                 82d                  kubelet  Starting kubelet.
+  Normal   NodeAllocatableEnforced  82d                  kubelet  Updated Node Allocatable limit across pods
+  Normal   NodeHasNoDiskPressure    82d (x8 over 82d)    kubelet  Node master03 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     82d (x7 over 82d)    kubelet  Node master03 status is now: NodeHasSufficientPID
+  Normal   NodeHasSufficientMemory  82d (x8 over 82d)    kubelet  Node master03 status is now: NodeHasSufficientMemory
+  Normal   NodeHasSufficientMemory  18h (x134 over 18h)  kubelet  Node master03 status is now: NodeHasSufficientMemory
+  Normal   Starting                 79m                  kubelet  Starting kubelet.
+  Normal   NodeHasSufficientMemory  79m (x8 over 79m)    kubelet  Node master03 status is now: NodeHasSufficientMemory
+  Normal   NodeHasNoDiskPressure    79m (x8 over 79m)    kubelet  Node master03 status is now: NodeHasNoDiskPressure
+  Normal   NodeHasSufficientPID     79m (x7 over 79m)    kubelet  Node master03 status is now: NodeHasSufficientPID
+  Normal   NodeAllocatableEnforced  79m                  kubelet  Updated Node Allocatable limit across pods
+NAME                                       VERSION   AVAILABLE   PROGRESSING   DEGRADED   SINCE   MESSAGE
+authentication                             4.10.3    True        False         False      82d     
+baremetal                                  4.10.3    True        False         False      82d     
+cloud-controller-manager                   4.10.3    True        False         False      82d     
+cloud-credential                           4.10.3    True        False         False      82d     
+cluster-autoscaler                         4.10.3    True        False         False      82d     
+config-operator                            4.10.3    True        False         False      82d     
+console                                    4.10.3    True        False         False      77m     
+csi-snapshot-controller                    4.10.3    True        False         False      82d     
+dns                                        4.10.3    True        False         False      82d     
+etcd                                       4.10.3    True        False         False      82d     
+image-registry                             4.10.3    True        False         False      82d     
+ingress                                    4.10.3    True        False         False      77m     
+insights                                   4.10.3    True        False         False      82d     
+kube-apiserver                             4.10.3    True        False         False      82d     
+kube-controller-manager                    4.10.3    True        False         False      82d     
+kube-scheduler                             4.10.3    True        False         False      82d     
+kube-storage-version-migrator              4.10.3    True        False         False      18h     
+machine-api                                4.10.3    True        False         False      82d     
+machine-approver                           4.10.3    True        False         False      82d     
+machine-config                             4.10.3    True        False         False      82d     
+marketplace                                4.10.3    True        False         False      82d     
+monitoring                                 4.10.3    True        False         False      82d     
+network                                    4.10.3    True        False         False      82d     
+node-tuning                                4.10.3    True        False         False      82d     
+openshift-apiserver                        4.10.3    True        False         False      82d     
+openshift-controller-manager               4.10.3    True        False         False      82d     
+openshift-samples                          4.10.3    True        False         False      82d     
+operator-lifecycle-manager                 4.10.3    True        False         False      82d     
+operator-lifecycle-manager-catalog         4.10.3    True        False         False      82d     
+operator-lifecycle-manager-packageserver   4.10.3    True        False         False      18h     
+service-ca                                 4.10.3    True        False         False      82d     
+storage                                    4.10.3    True        False         False      82d     
+NAME      VERSION   AVAILABLE   PROGRESSING   SINCE   STATUS
+version   4.10.3    True        False         82d     Cluster version is 4.10.3
