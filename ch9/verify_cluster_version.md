@@ -67,3 +67,18 @@ Kubernetes Version: v1.23.3+e419edf
 
 
 
+[student@workstation ch9]$ oc adm upgrade 
+Cluster version is 4.10.3
+
+Upstream is unset, so the cluster will use an appropriate default.
+Channel: stable-4.10 (available channels: candidate-4.10, candidate-4.11, eus-4.10, fast-4.10, fast-4.11, stable-4.10, stable-4.11)
+
+Recommended updates:
+
+  VERSION     IMAGE
+  4.10.35     quay.io/openshift-release-dev/ocp-release@sha256:766bc6b381163ecccfea00556dd336dd49067413f69cbc29337fea778295c7bb
+  4.10.34     quay.io/openshift-release-dev/ocp-release@sha256:8e2e492710a3b36b1de781ac1e926451cbf48b566c8781fb56ce03ff22752c9b
+  4.10.33     quay.io/openshift-release-dev/ocp-release@sha256:15832b3fc1eae4e3fafc97350e5d8a4d1be3948a6e5f5e9db8709b092d27e3da
+  4.10.32     quay.io/openshift-release-dev/ocp-release@sha256:9f53e05393bcc9bc1ab9666b1e4307ea44be896342b3b64ab465e59bac0dbd34
+
+
