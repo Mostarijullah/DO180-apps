@@ -1,0 +1,32 @@
+NAME                    PROVISIONER                                   RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+nfs-storage (default)   k8s-sigs.io/nfs-subdir-external-provisioner   Delete          Immediate           false                  82d
+In project install-storage on server https://api.ocp4.example.com:6443
+
+You have no services, deployment configs, or build configs.
+Run 'oc new-app' to create an application.
+--> Found container image cafc055 (17 months old) from registry.redhat.io for "registry.redhat.io/rhel8/postgresql-13:1-7"
+
+    PostgreSQL 13 
+    ------------- 
+    PostgreSQL is an advanced Object-Relational database management system (DBMS). The image contains the client and server programs that you'll need to create, run, maintain and access a PostgreSQL DBMS server.
+
+    Tags: database, postgresql, postgresql13, postgresql-13
+
+    * An image stream tag will be created as "postgresql-persistent:1-7" that will track this image
+
+--> Creating resources ...
+    imagestream.image.openshift.io "postgresql-persistent" created
+    deployment.apps "postgresql-persistent" created
+    service "postgresql-persistent" created
+--> Success
+    Application is not exposed. You can expose services to the outside world by executing one or more of the commands below:
+     'oc expose service/postgresql-persistent' 
+    Run 'oc status' to view your app.
+deployment.apps/postgresql-persistent volume updated
+NAME                 STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+postgresql-storage   Bound    pvc-9e890af2-8a88-4298-b045-88ea1b66ff27   10Gi       RWO            nfs-storage    24s
+NAME                                       CLAIM
+pvc-1010c4b2-da69-4190-93b4-7f299fe83f66   nexus-pv
+pvc-554870a3-cfc1-44cb-8fc5-0def104af532   registry-claim
+pvc-9e890af2-8a88-4298-b045-88ea1b66ff27   postgresql-storage
+pvc-ef96a29e-f200-4a0c-b984-03d877077a73   dbclaim
