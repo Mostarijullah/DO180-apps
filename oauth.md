@@ -258,3 +258,120 @@ NAME                                                                        ROLE
 self-provisioners                                                           ClusterRole/self-provisioner                                                            14s                                                                    system:authenticated:oauth                     
 [student@workstation DO180-apps]$ 
 
+
+
+[student@workstation DO180-apps]$ oc explain oauth.spec.identityProviders
+KIND:     OAuth
+VERSION:  config.openshift.io/v1
+
+RESOURCE: identityProviders <[]Object>
+
+DESCRIPTION:
+     identityProviders is an ordered list of ways for a user to identify
+     themselves. When this list is empty, no identities are provisioned for
+     users.
+
+     IdentityProvider provides identities for users authenticating using
+     credentials
+
+FIELDS:
+   basicAuth	<Object>
+     basicAuth contains configuration options for the BasicAuth IdP
+
+   github	<Object>
+     github enables user authentication using GitHub credentials
+
+   gitlab	<Object>
+     gitlab enables user authentication using GitLab credentials
+
+   google	<Object>
+     google enables user authentication using Google credentials
+
+   htpasswd	<Object>
+     htpasswd enables user authentication using an HTPasswd file to validate
+     credentials
+
+   keystone	<Object>
+     keystone enables user authentication using keystone password credentials
+
+ldap	<Object>
+     ldap enables user authentication using LDAP credentials
+
+   mappingMethod	<string>
+     mappingMethod determines how identities from this provider are mapped to
+     users Defaults to "claim"
+
+   name	<string>
+     name is used to qualify the identities returned by this provider. - It MUST
+     be unique and not shared by any other identity provider used - It MUST be a
+     valid path segment: name cannot equal "." or ".." or contain "/" or "%" or
+     ":" Ref:
+     https://godoc.org/github.com/openshift/origin/pkg/user/apis/user/validation#ValidateIdentityProviderName
+
+   openID	<Object>
+     openID enables user authentication using OpenID credentials
+
+   requestHeader	<Object>
+     requestHeader enables user authentication using request header credentials
+
+   type	<string>
+     type identifies the identity provider type for this entry.
+
+oc create secret generic localusers \
+--from-file htpasswd=~/DO280/labs/auth-provider/htpasswd \
+-n openshift-config
+
+spec:
+identityProviders:
+- htpasswd:
+    fileData:
+      name: localusers
+  mappingMethod: claim
+  name: myusers
+  type: HTPasswd
+
+oc extract secret/localusers -n openshift-config \
+--to ~/DO280/labs/auth-provider/ --confirm
+
+oc set data secret/localusers \
+--from-file htpasswd=~/DO280/labs/auth-provider/htpasswd \
+-n openshift-config
+
+[student@workstation DO180-apps]$ oc get secret -n openshift-config
+NAME                                      TYPE                                  DATA   AGE
+builder-dockercfg-lks6d                   kubernetes.io/dockercfg               1      83d
+builder-token-bw2h6                       kubernetes.io/service-account-token   4      83d
+builder-token-ndr59                       kubernetes.io/service-account-token   4      83d
+classroom-tls                             kubernetes.io/tls                     2      83d
+default-dockercfg-mbtml                   kubernetes.io/dockercfg               1      83d
+default-token-chts2                       kubernetes.io/service-account-token   4      83d
+default-token-t825t                       kubernetes.io/service-account-token   4      83d
+deployer-dockercfg-285qk                  kubernetes.io/dockercfg               1      83d
+deployer-token-5jdjq                      kubernetes.io/service-account-token   4      83d
+deployer-token-vzzxt                      kubernetes.io/service-account-token   4      83d
+etcd-client                               kubernetes.io/tls                     2      83d
+etcd-metric-client                        kubernetes.io/tls                     2      83d
+etcd-metric-signer                        kubernetes.io/tls                     2      83d
+etcd-signer                               kubernetes.io/tls                     2      83d
+initial-service-account-private-key       Opaque                                1      83d
+localusers                                Opaque                                1      17h
+pull-secret                               kubernetes.io/dockerconfigjson        1      83d
+webhook-authentication-integrated-oauth   Opaque                                1      83d
+[student@workstation DO180-apps]$ oc describe secret localusers 
+Error from server (NotFound): secrets "localusers" not found
+[student@workstation DO180-apps]$ oc describe secret localusers -n openshift-config
+Name:         localusers
+Namespace:    openshift-config
+Labels:       <none>
+Annotations:  <none>
+
+Type:  Opaque
+
+Data
+====
+htpasswd:  299 bytes
+[student@workstation DO180-apps]$ oc whoami
+admin
+[student@workstation DO180-apps]$ oc project
+Using project "test-projectadmin" on server "https://api.ocp4.example.com:6443".
+
